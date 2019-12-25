@@ -631,7 +631,7 @@ IDE_Morph.prototype.createControlBar = function () {
         stageSizeButton,
         appModeButton,
         steppingButton,
-        cloudButton,
+        //ALKHW cloudButton,
         x,
         colors = [
             this.groupColor,
@@ -925,9 +925,9 @@ IDE_Morph.prototype.createControlBar = function () {
     button.drawNew();
     // button.hint = 'cloud operations';
     button.fixLayout();
-    cloudButton = button;
-    this.controlBar.add(cloudButton);
-    this.controlBar.cloudButton = cloudButton; // for menu positioning
+    //ALKHW cloudButton = button;
+    //ALKHW this.controlBar.add(cloudButton);
+    //ALKHW this.controlBar.cloudButton = cloudButton; // for menu positioning
 
     this.controlBar.fixLayout = function () {
         x = this.right() - padding;
@@ -963,11 +963,13 @@ IDE_Morph.prototype.createControlBar = function () {
         settingsButton.setCenter(myself.controlBar.center());
         settingsButton.setLeft(this.left());
 
-        cloudButton.setCenter(myself.controlBar.center());
-        cloudButton.setRight(settingsButton.left() - padding);
+        //ALKHW cloudButton.setCenter(myself.controlBar.center());
+        //ALKHW cloudButton.setRight(settingsButton.left() - padding);
 
         projectButton.setCenter(myself.controlBar.center());
-        projectButton.setRight(cloudButton.left() - padding);
+        //ALKHW projectButton.setRight(cloudButton.left() - padding);
+        //the next line is by ALKHW
+        projectButton.setRight(settingsButton.left() - padding);
 
         this.refreshSlider();
         this.updateLabel();
@@ -4955,7 +4957,7 @@ IDE_Morph.prototype.toggleAppMode = function (appMode) {
     var world = this.world(),
         elements = [
             this.logo,
-            this.controlBar.cloudButton,
+            //ALKHW this.controlBar.cloudButton,
             this.controlBar.projectButton,
             this.controlBar.settingsButton,
             this.controlBar.steppingButton,
