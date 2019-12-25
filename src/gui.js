@@ -1005,7 +1005,8 @@ IDE_Morph.prototype.createControlBar = function () {
     };
 
     this.controlBar.updateLabel = function () {
-        var suffix = myself.world().isDevMode ?
+    	// ALKHW: do not display project name label
+        /*var suffix = myself.world().isDevMode ?
                 ' - ' + localize('development mode') : '';
 
         if (this.label) {
@@ -1029,7 +1030,7 @@ IDE_Morph.prototype.createControlBar = function () {
         this.label.drawNew();
         this.add(this.label);
         this.label.setCenter(this.center());
-        this.label.setLeft(this.settingsButton.right() + padding);
+        this.label.setLeft(this.settingsButton.right() + padding);*/
     };
 };
 
