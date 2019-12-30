@@ -12111,7 +12111,7 @@ WorldMorph.prototype.doOneCycle = function () {
 };
 
 WorldMorph.prototype.fillPage = function () {
-    var clientHeight = window.innerHeight,
+    var clientHeight = window.innerHeight - 42,
         clientWidth = window.innerWidth,
         myself = this;
 
@@ -12119,11 +12119,11 @@ WorldMorph.prototype.fillPage = function () {
     this.worldCanvas.style.left = "0px";
     this.worldCanvas.style.right = "0px";
     this.worldCanvas.style.width = "100%";
-    this.worldCanvas.style.height = "100%";
+    //this.worldCanvas.style.height = "100%";
 
     if (document.documentElement.scrollTop) {
         // scrolled down b/c of viewport scaling
-        clientHeight = document.documentElement.clientHeight;
+        clientHeight = document.documentElement.clientHeight - 42;
     }
     if (document.documentElement.scrollLeft) {
         // scrolled left b/c of viewport scaling
